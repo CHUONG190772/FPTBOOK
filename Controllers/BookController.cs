@@ -3,6 +3,7 @@ using FPTLibrary.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace FPTLibrary.Controllers
 {
@@ -13,12 +14,11 @@ namespace FPTLibrary.Controllers
         {
             context = _context;
         }
-        public IActionResult Index()
+        public IActionResult Index(int? id)
         {
-            var book = context.Books.ToList();
+            var book = context.Books.ToList();        
             return View(book);
         }
-
         public IActionResult Detail(int? id)
         {
             if (id == null)
@@ -79,6 +79,18 @@ namespace FPTLibrary.Controllers
             var book = context.Books.Find(id);
             context.Books.Remove(book);
             return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Index(string BookSearch)
+        {
+            ViewData["GetBook"] = BookSearch;
+            var query = from item in context.Books select item;
+            if (!string.IsNullOrEmpty(BookSearch))
+            {
+                query = query.Where(b => b.Name.Contains(BookSearch));
+            }
+            return View(await query.AsNoTracking().ToListAsync());
         }
     }
 }

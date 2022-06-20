@@ -9,7 +9,7 @@
 list {
     display: inline-block;
     text-align: center;
-    padding: 30px;
+    padding: 40px;
     
 }
 h2{
@@ -23,4 +23,13 @@ h2{
 }
 #option{
     text-align: center;
+}
+#tool{
+    display: inline-block;
+}
+#add {
+    display: inline-block;
+}
+#search {
+    display: inline-block;
 }
