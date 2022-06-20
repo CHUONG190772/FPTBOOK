@@ -1,0 +1,26 @@
+﻿#book_list{
+    list-style-type: none;
+    display: inline-block;
+    text-align: center;
+}
+#book_content {
+    display: inline-block;
+}
+list {
+    display: inline-block;
+    text-align: center;
+    padding: 30px;
+    
+}
+h2{
+    text-align: center;
+    font-family: .VnArial;
+    font-size: 20px;
+    padding: 10px;
+}
+#info{
+    text-align: center;
+}
+#option{
+    text-align: center;
+}

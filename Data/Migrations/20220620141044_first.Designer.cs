@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FPTLibrary.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220620094651_firt")]
-    partial class firt
+    [Migration("20220620141044_first")]
+    partial class first
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -88,6 +88,30 @@ namespace FPTLibrary.Data.Migrations
                             Price = 700.0,
                             Published_Date = new DateTime(1897, 9, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Quantity = 10
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Author = "Rosalind S. Helderman",
+                            CategoryId = 1,
+                            Description = "One of the most urgent and important investigations ever conducted, the Mueller inquiry focuses on Donald Trump, his presidential campaign, and Russian interference in the 2016 election, and draws on the testimony of dozens of witnesses and the work of some of the country’s most seasoned prosecutors.",
+                            Image = "https://m.media-amazon.com/images/P/B07PB76691.01._SCLZZZZZZZ_SX500_.jpg",
+                            Name = "The Mueller Report",
+                            Price = 300.0,
+                            Published_Date = new DateTime(2013, 8, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Quantity = 20
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Author = "Stephen King",
+                            CategoryId = 2,
+                            Description = "IT tells the story of seven friends who face an evil shape shifting entity that feeds on the fears of children. One of IT’s favorite disguises is a circus clown called Pennywise, otherwise known as 'Bob Gray'.",
+                            Image = "https://d28hgpri8am2if.cloudfront.net/book_images/onix/cvr9781982127794/it-9781982127794_hr.jpg",
+                            Name = "IT",
+                            Price = 800.0,
+                            Published_Date = new DateTime(1986, 12, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Quantity = 60
                         });
                 });
 

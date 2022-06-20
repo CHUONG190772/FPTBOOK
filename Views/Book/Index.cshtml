@@ -7,11 +7,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book</title>
+    <link rel="stylesheet" href="~/css/book_index.css" />
 </head>
 <body>
-    <h1 class="text-success">Book List</h1>
-    <a class="btn btn-warning" asp-action="Create">Add new book</a><br />
-    <table>
+    <h1 class="text-success text-center">Book List</h1>
+    <a class="btn btn-warning" asp-action="Create">Add new book</a><br /><br /><br />
+    @*<table>
         <tr>
             <th>Book ID</th>
             <th>Book Name</th>
@@ -35,6 +36,25 @@
                 </td>
             </tr>
         }
-    </table>
+    </table>*@
+<div id="book_content"> 
+     @foreach(var book in Model)
+     {
+            <ul id="book_list">
+                <li id="list">   
+                    <div id="info">
+                        <a id="image" asp-action="Detail" asp-route-id="@book.Id">
+                                <img src="@book.Image" width="180" height="250">
+                        </a> 
+                        <h2>@book.Name</h2>
+                    </div>
+                    <div id="option">
+                        <a class="btn btn-warning" asp-action="Edit" asp-route-id="@book.Id">Edit</a>
+                        <a class="btn btn-warning" asp-action="Delete" asp-route-id="@book.Id" onclick="    return confirm('Are you sure you want to remove this book?');">Delete</a>
+                    </div>
+                </li>
+            </ul>
+     }
+</div>
 </body>
 </html>

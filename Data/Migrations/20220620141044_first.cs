@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace FPTLibrary.Data.Migrations
 {
-    public partial class firt : Migration
+    public partial class first : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -61,12 +61,13 @@ namespace FPTLibrary.Data.Migrations
             migrationBuilder.InsertData(
                 table: "Books",
                 columns: new[] { "Id", "Author", "CategoryId", "Description", "Image", "Name", "Price", "Published_Date", "Quantity" },
-                values: new object[] { 2, "Bram Stoker", 2, "The novel has no single protagonist, but opens with solicitor Jonathan Harker taking a business trip to stay at the castle of a Transylvanian noble, Count Dracula. Harker escapes the castle after discovering that Dracula is a vampire, and the Count moves to England and plagues the seaside town of Whitby. A small group, led by Abraham Van Helsing, hunt Dracula and, in the end, kill him.", "https://thebookmarketng.com/wp-content/uploads/2020/08/dracula.jpg", "Dracula", 700.0, new DateTime(1897, 9, 11, 0, 0, 0, 0, DateTimeKind.Unspecified), 10 });
-
-            migrationBuilder.InsertData(
-                table: "Books",
-                columns: new[] { "Id", "Author", "CategoryId", "Description", "Image", "Name", "Price", "Published_Date", "Quantity" },
-                values: new object[] { 1, "Makoto Shinkai", 3, "A comet appears and mysteriously affects and connects the lives of two teenagers of the same age, a boy in the big, bustling city of Tokyo and a girl in a country village where life is slow but idyllic. They find for unknown reasons, they wake up in each other's bodies for weeks at a time. At first, they both think these experiences are just vivid dreams, but when the reality of their situations sinks in, they learn to adjust and even enjoy it. Soon they start to communicate and try to leave notes about who they are and what they are doing. But as they discover more about each other and the other's life, they uncover some disturbing hints that their distance is more than just physical and tragedy haunts them.", "https://upload.wikimedia.org/wikipedia/vi/b/b3/Your_Name_novel.jpg", "Your Name", 500.0, new DateTime(2016, 3, 7, 0, 0, 0, 0, DateTimeKind.Unspecified), 30 });
+                values: new object[,]
+                {
+                    { 3, "Rosalind S. Helderman", 1, "One of the most urgent and important investigations ever conducted, the Mueller inquiry focuses on Donald Trump, his presidential campaign, and Russian interference in the 2016 election, and draws on the testimony of dozens of witnesses and the work of some of the country’s most seasoned prosecutors.", "https://m.media-amazon.com/images/P/B07PB76691.01._SCLZZZZZZZ_SX500_.jpg", "The Mueller Report", 300.0, new DateTime(2013, 8, 9, 0, 0, 0, 0, DateTimeKind.Unspecified), 20 },
+                    { 2, "Bram Stoker", 2, "The novel has no single protagonist, but opens with solicitor Jonathan Harker taking a business trip to stay at the castle of a Transylvanian noble, Count Dracula. Harker escapes the castle after discovering that Dracula is a vampire, and the Count moves to England and plagues the seaside town of Whitby. A small group, led by Abraham Van Helsing, hunt Dracula and, in the end, kill him.", "https://thebookmarketng.com/wp-content/uploads/2020/08/dracula.jpg", "Dracula", 700.0, new DateTime(1897, 9, 11, 0, 0, 0, 0, DateTimeKind.Unspecified), 10 },
+                    { 4, "Stephen King", 2, "IT tells the story of seven friends who face an evil shape shifting entity that feeds on the fears of children. One of IT’s favorite disguises is a circus clown called Pennywise, otherwise known as 'Bob Gray'.", "https://d28hgpri8am2if.cloudfront.net/book_images/onix/cvr9781982127794/it-9781982127794_hr.jpg", "IT", 800.0, new DateTime(1986, 12, 9, 0, 0, 0, 0, DateTimeKind.Unspecified), 60 },
+                    { 1, "Makoto Shinkai", 3, "A comet appears and mysteriously affects and connects the lives of two teenagers of the same age, a boy in the big, bustling city of Tokyo and a girl in a country village where life is slow but idyllic. They find for unknown reasons, they wake up in each other's bodies for weeks at a time. At first, they both think these experiences are just vivid dreams, but when the reality of their situations sinks in, they learn to adjust and even enjoy it. Soon they start to communicate and try to leave notes about who they are and what they are doing. But as they discover more about each other and the other's life, they uncover some disturbing hints that their distance is more than just physical and tragedy haunts them.", "https://upload.wikimedia.org/wikipedia/vi/b/b3/Your_Name_novel.jpg", "Your Name", 500.0, new DateTime(2016, 3, 7, 0, 0, 0, 0, DateTimeKind.Unspecified), 30 }
+                });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Books_CategoryId",
