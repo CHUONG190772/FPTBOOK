@@ -1,0 +1,40 @@
+﻿@model ICollection<FPTLibrary.Models.Book>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book</title>
+</head>
+<body>
+    <h1 class="text-success">Book List</h1>
+    <a class="btn btn-warning" asp-action="Create">Add new book</a><br />
+    <table>
+        <tr>
+            <th>Book ID</th>
+            <th>Book Name</th>
+            <th>Book Image</th>
+            <th>Options</th>
+        </tr>
+        @foreach(var book in Model)
+        {
+            <tr>
+                <td>@book.Id</td>
+                <td>@book.Name</td>
+                <td>
+                    <a>
+                    <img src="@book.Image" width="80" height="120">
+                    </a>
+                </td>
+                <td>
+                    <a class="btn btn-warning" asp-action="Detail" asp-route-id="@book.Id">View Detail</a>
+                    <a class="btn btn-warning" asp-action="Edit" asp-route-id="@book.Id">Edit</a>
+                    <a class="btn btn-warning" asp-action="Delete" asp-route-id="@book.Id" onclick="    return confirm('Are you sure you want to remove this book?');">Delete</a>
+                </td>
+            </tr>
+        }
+    </table>
+</body>
+</html>
